@@ -41,12 +41,17 @@ public class display extends HttpServlet {
 			ResultSet rst = db.executeQuery(query);
 			
 			request.getRequestDispatcher("index.jsp").include(request, response);
-			
-			out.print("<div style='text-align:center;border:2px solid green; padding:20px;'>");
-			while (rst.next()) {
-				out.print("<div style='text-align:center;border:2px solid black; padding:5px; margin: auto 10%'>");
-				out.print("<p>" + rst.getInt("product_id") + "  ,  "+ rst.getString("product_name") + 
-						"  ,  " + rst.getString("quantity") +"  ,  "+rst.getString("product_desc"));
+			if(rst != null && rst.next()) {
+				out.print("<div style='text-align:center;border:2px solid green; padding:20px;'>");
+				while (rst.next()) {
+					out.print("<div style='text-align:center;border:2px solid black; padding:5px; margin: auto 10%'>");
+					out.print("<p>" + rst.getInt("product_id") + "  ,  "+ rst.getString("product_name") + 
+							"  ,  " + rst.getString("quantity") +"  ,  "+rst.getString("product_desc"));
+					out.print("</div>");
+				}
+			}else {
+				out.print("<div style='text-align:center;border:2px solid green; padding:20px;'>");
+				out.print("<p>product not found</p> ");
 				out.print("</div>");
 			}
 			out.print("</div>");
@@ -58,5 +63,4 @@ public class display extends HttpServlet {
 			db.close();
 		}
 	}
-
 }

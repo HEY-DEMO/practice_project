@@ -7,7 +7,6 @@
 <title>Search for product</title>
 </head>
 <body>
-	
 	<div style="text-align:center;border:2px solid green; padding:20px;">
 	<form method="get" action="display">
 		<fieldset>

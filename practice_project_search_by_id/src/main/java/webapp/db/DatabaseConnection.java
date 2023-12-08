@@ -21,7 +21,7 @@ public class DatabaseConnection {
 
 	Connection connection = null;
 	Statement statment = null;
-	ResultSet rst;
+	ResultSet rst = null;
 	PreparedStatement prstm = null;
 	CallableStatement callstm = null;
 
