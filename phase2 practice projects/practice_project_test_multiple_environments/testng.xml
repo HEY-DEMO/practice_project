@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="WebAutomationSuite" parallel="tests" thread-count="2">
+    <test name="ChromeTest">
+        <classes>
+            <class name="phase2_practice_project.phase2_practice_project.testing_webelements">
+                <methods>
+                    <include name="chromeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EdgeTest">
+        <classes>
+            <class name="phase2_practice_project.phase2_practice_project.testing_webelements">
+                <methods>
+                    <include name="edgeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
